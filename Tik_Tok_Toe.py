@@ -30,6 +30,13 @@ def isWinPlayer(r, c):
             buttons[r][c].cget('text') == buttons[(r + 1) % 3][(c + 1) % 3].cget('text') == buttons[(r + 2) % 3][
         (c + 2) % 3].cget('text'):
         winPlayer(buttons[r][c].cget('text'))
+    t = True
+    for r in buttons:
+        for c in r:
+            if c.cget("text") == "":
+                t = False
+    if t:
+        deleteButtons()
 
 
 def pressedButton(r, c):
